@@ -45,6 +45,7 @@ contract PuzzleBox {
     event Zip();
     event Torch(uint256[] dripIds);
     event Burned(uint256 dripId);
+    event Creep();
     event Open(address winner);
 
     bool public isInitialized;
@@ -219,6 +220,7 @@ contract PuzzleBox {
     {
         // Succeed only if creepForward is called 7 times.
         require(this.creepForward{value: address(this).balance}() == 7, 'too creepy');
+        emit Creep();
     }
 
     function creepForward()
