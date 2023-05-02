@@ -11,6 +11,7 @@ contract PuzzleBoxFixture is Test {
     event Drip(uint256 dripId, uint256 fee);
     event Spread(uint256 amount, uint256 remaining);
     event Zip();
+    event Creep();
     event Torch(uint256[] dripIds);
     event Burned(uint256 dripId);
     event Open(address winner);
@@ -25,8 +26,9 @@ contract PuzzleBoxFixture is Test {
     }
 
     function test_win() external {
-        vm.expectEmit(false, false, false, false, address(_puzzle));
-        emit Open(address(0));
+        // Uncomment to verify a complete solution.
+        // vm.expectEmit(false, false, false, false, address(_puzzle));
+        // emit Open(address(0));
         _solution.solve(_puzzle);
     }
 }

@@ -86,11 +86,7 @@ contract PuzzleBox {
     }
 
     modifier maxCallDataSize(uint256 maxBytes) {
-        {
-            uint256 calldataSize;
-            assembly { calldataSize := calldatasize() }
-            require(calldataSize <= maxBytes, 'call data too large');
-        }
+        require(msg.data.length <= maxBytes, 'call data too large');
         _;
     }
     
