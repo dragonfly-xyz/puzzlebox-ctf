@@ -6,7 +6,7 @@ Do you have what it takes to unlock this devious solidity puzzle box? You will n
 
 ```bash
 # clone this repo
-git clone git@github.com:dragonfly-ctf/puzzlebox-ctf.git && cd puzzlebox-ctf
+git clone git@github.com:dragonfly-xyz/puzzlebox-ctf.git && cd puzzlebox-ctf
 # install foundry
 forge install
 # run/check your solution
