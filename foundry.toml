@@ -4,6 +4,6 @@ out = 'out'
 libs = ['lib']
 optimizer = false
 optimizer_runs = 200
-ignored_error_codes=[3628, 5159]
+ignored_error_codes=[3628, 5159, 1878]
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config

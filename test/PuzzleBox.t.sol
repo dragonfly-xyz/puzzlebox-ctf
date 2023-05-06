@@ -20,12 +20,14 @@ contract PuzzleBoxFixture is Test {
     PuzzleBox _puzzle;
     PuzzleBoxSolution _solution;
 
-    function setUp() external {
+    // Use a modifier instead of setUp() to keep it all in one tx.
+    modifier initEnv() {
         _puzzle = _factory.createPuzzleBox{value: 1337}();
         _solution = PuzzleBoxSolution(address(new SolutionContainer(type(PuzzleBoxSolution).runtimeCode)));
+        _;
     }
 
-    function test_win() external {
+    function test_win() external initEnv {
         // Uncomment to verify a complete solution.
         // vm.expectEmit(false, false, false, false, address(_puzzle));
         // emit Open(address(0));
